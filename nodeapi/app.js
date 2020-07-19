@@ -26,11 +26,11 @@ mongoose.connection.on('error', err => {
 });
 
 // bring in routes
-const postRoutes = require('./api/routes/post');
-const authRoutes = require('./api/routes/auth');
-const userRoutes = require('./api/routes/user');
+const postRoutes = require('./routes/post');
+const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 // apiDocs
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     fs.readFile('docs/apiDocs.json', (err, data) => {
         if (err) {
             res.status(400).json({
